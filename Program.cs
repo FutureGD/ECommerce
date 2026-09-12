@@ -1,6 +1,8 @@
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<AppDbContext>(opt => opt.UseInMemoryDatabase("ECommerceDb"));
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
