@@ -13,6 +13,15 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
+app.MapGet("/products", async (AppDbContext db) => await db.products.ToListAsync());
+
+app.MapPost("/products", async (Product product, AppDbContext db) =>
+{
+    db.products.Add(product);
+    await db.SaveChangesAsync();
+    return Results.Created($"/products/{product.Id}", product);
+});
+
 app.UseHttpsRedirection();
 
 app.Run();
