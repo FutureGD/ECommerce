@@ -1,0 +1,12 @@
+POST http://localhost:5019/products
+Content-Type: application/json
+
+{
+    "name": "Mechanical Keyboard",
+    "price": 2499,
+    "categoryId": 1
+}
+
+###
+
+GET http://localhost:5019/products
