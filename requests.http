@@ -1,3 +1,12 @@
+POST http://localhost:5019/categories
+Content-Type: application/json
+
+{
+    "name": "Electronics"
+}
+
+###
+
 POST http://localhost:5019/products
 Content-Type: application/json
 
@@ -10,3 +19,11 @@ Content-Type: application/json
 ###
 
 GET http://localhost:5019/products
+
+###
+
+GET http://localhost:5019/categories
+
+###
+
+GET http://localhost:5019/categories/1/products
